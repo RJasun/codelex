@@ -11,7 +11,8 @@ $elements = [
 echo "Available elements: " . implode(', ', array_keys($elements)) . "\n";
 $userSelection = readline('Choose your weapon: ');
 
-if (in_array(strtolower($userSelection), $elements)) {
+if (in_array(strtolower($userSelection), $elements) === false)
+{
     echo 'Invalid element selected';
     exit;
 }
