@@ -1,5 +1,7 @@
 <?php
 
-$json = file_get_contents('https://rickandmortyapi.com/api/episode');
+$episodes = json_decode(file_get_contents('https://rickandmortyapi.com/api/episode'));
 
-$data = json_decode($json);
+foreach ($episodes->results as $episode) {
+    echo $episode->name . PHP_EOL;
+}
